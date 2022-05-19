@@ -25,3 +25,10 @@ jobs:
         cache: 'npm'
     - run: npm install
     - run: npm test
+    - uses: actions/upload-artefact@v3
+      if: always()
+      with:
+       name: testsReport
+       path: |
+         report.html 
+         html-report/jest-html-reporters-attach/report
