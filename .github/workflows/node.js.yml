@@ -25,16 +25,15 @@ jobs:
         cache: 'npm'
     - run: npm install
     - run: npm test
-    - uses: actions/upload-artifacts@v3
+    - uses: actions/upload-artifact@v3
       if: always()
       with:
        name: testsReport
        path: |
          report.html 
-         html-report/jest-html-reporters-attach/report
-            
+         html-report/jest-html-reporters-attach/report          
     - name: send telegram message on push
-      uses: appleboy/telegram-action@main
+    - uses: appleboy/telegram-action@main
       with:
        to: ${{ secrets.TELEGRAM_TO }}
        token: ${{ secrets.TELEGRAM_TOKEN }}
