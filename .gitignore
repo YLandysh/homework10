@@ -1,3 +1,5 @@
 node_modules
 test-report.html
 jest-html-reporters-attach/jest_html_reporters/
+html-report
+.idea
