@@ -27,6 +27,7 @@ jobs:
     - run: npm test
     - uses: actions/upload-artifact@v3
       if: always()
+      continue-on-error: true
       with:
        name: testsReport
        path: |
