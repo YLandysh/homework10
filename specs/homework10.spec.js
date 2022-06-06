@@ -15,8 +15,8 @@ describe("Проверка сервиса Mailboxlayer", () => {
         // );
         // const r = await api().Mailboxlayer().postKeyAndEmil(); // key,email
         // expect(r.status).toEqual(200);
-        const b = await api().Mailboxlayer().post();
-        expect(b.status).toEqual(200);
+        const r = await api().Mailboxlayer().post(params.key, params.email);
+        expect(r.status).toEqual(200);
     });
     //     Первый тест - положительный
     test("Авторизация с ключом / post 200", async () => {
@@ -26,7 +26,7 @@ describe("Проверка сервиса Mailboxlayer", () => {
         //     },
         // );
         // const r = await api().Mailboxlayer().postOfKey(); // key
-        const r = await api().Mailboxlayer().post();
+        const r = await api().Mailboxlayer().post(params.key);
         expect(r.status).toEqual(200);
     });
     //     Второй тест - набор параметризированных тестов
@@ -52,8 +52,8 @@ describe("Проверка сервиса Mailboxlayer", () => {
         // );
         // const r = await api().Mailboxlayer().postOfEmail(); // email
         // expect(r.status).toEqual(200);
-        const a = await api().Mailboxlayer().post();
-        expect(a.status).toEqual(200);
+        const r = await api().Mailboxlayer().post(params.email);
+        expect(r.status).toEqual(200);
     });
 });
 

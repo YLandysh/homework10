@@ -17,14 +17,13 @@ const Mailboxlayer = {
     //     return r;
     // },
     post: async () => {
-            const r = await supertest(`${urls.mailboxlayer}`).post(`api/check?${params.key}`).set("Accept", "application/json");
+            const r = await supertest(`${urls.mailboxlayer}`).post(`api/check?${params.key}&${params.email}`).set("Accept", "application/json");
             return r;
-
-            const a = await supertest(`${urls.mailboxlayer}`).post(`api/check?${params.email}`).set("Accept", "application/json");
-            return a;
-
-            const b = await supertest(`${urls.mailboxlayer}`).post(`api/check?${params.key}&${params.email}`).set("Accept", "application/json");
-            return b;
+            // const a = await supertest(`${urls.mailboxlayer}`).post(`api/check?${params.email}`).set("Accept", "application/json");
+            // return a;
+            //
+            // const b = await supertest(`${urls.mailboxlayer}`).post(`api/check?${params.key}&${params.email}`).set("Accept", "application/json");
+            // return b;
         },
 };
 
